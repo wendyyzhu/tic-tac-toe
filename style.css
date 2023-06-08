@@ -17,7 +17,7 @@ body {
 
 .backgroundo {
     background-image: url(images/Background-raining.png);
-    background-size: contain;
+    background-size: auto;
     background-repeat: repeat;
 }
 
@@ -98,10 +98,10 @@ button:hover{
 
 @media screen and (max-width: 500px){
     h1 {
-        font-size: 50px;
+        font-size: 60px;
     }
     h2, h3, button{
-        font-size: 20px;
+        font-size: 30px;
     }
     h2 {
         margin-bottom: 0px;
