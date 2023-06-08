@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-image: url(images/Background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 350px;
+    width: 350px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.board div {
+    /* border: 5px solid black; */
+    text-align: center;
+    border-radius: 10px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.board div:hover {
+    background: orange;
+    border: 5px solid white;
+}
+
+.reset {
+    display: none;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 90px;
+    color: white;
+    font-family: 'Londrina Outline', cursive;
+    margin-bottom: 20px;
+}
+
+h2 {
+    display: none;
+    font-family: 'Londrina Outline', cursive;
+    color: white;
+    font-size: 40px;
+    margin: 20px 0px;
+}
+
+h3 {
+    font-size: 40px;
+    color: white;
+    font-family: 'Londrina Outline', cursive;
+    margin: 20px 0px;
+}
+
+.O {
+    font-size: 80px;
+    color: #FFD774;
+    font-family: 'Rubik Puddles', cursive;
+}
+
+.X {
+    font-size: 80px;
+    color: #81EAFF;
+    font-family: 'Rubik Puddles', cursive;
+}
+
+button {
+    background-color: transparent;
+    font-size: 40px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-family: 'Londrina Outline', cursive;
+    padding: 15px;
+}
+
+button:hover{
+    border: 5px solid white;
+}
+
