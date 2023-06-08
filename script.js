@@ -2,13 +2,14 @@
 const squares = document.querySelectorAll(".board div")
 const resultMsg = document.querySelector("h2")
 const playersTurnLetter = document.querySelector("span")
-const playAgainBtn = document.querySelector(".reset")
-const playersTurnMsg = document.querySelector("h3") 
+const playAgainBtn = document.getElementById("reset")
+const playersTurnMsg = document.getElementById("players-turn-msg") 
+const background = document.querySelector("body")
+const weatherDescription = document.querySelector(".weather-description")
+const clickSound = new Audio("click.wav")
+const finishSound = new Audio("finish.wav")
 const playerX = "X"
 const playerO = "O"
-let player = "playerX"
-let hasWon = false
-let turns = 0
 const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
@@ -20,6 +21,10 @@ const winningCombos = [
     [2, 4, 6]
 ]
 
+let player = "playerX"
+let hasWon = false
+let turns = 0
+
 
 for (let square of squares) {
     square.addEventListener ("click", handleChoice)
@@ -27,9 +32,11 @@ for (let square of squares) {
 
 playAgainBtn.addEventListener("click", handlePlayAgain)
 
+
 function handleChoice (event) {
     turns++ 
-    
+    clickSound.play()
+
     let selectedSquare = event.target
 
     if (turns % 2 === 1) {
@@ -68,23 +75,36 @@ function checkWin() {
 }
 
 function winner () {
-    resultMsg.style.display = "block"
-    playAgainBtn.style.display = "block"
+    finishSound.play()
     for (let square of squares) {
         square.style.pointerEvents = "none"
     }
-    playersTurnMsg.style.visibility = "hidden"
-    resultMsg.innerHTML = `The winner is Player ${player} !`
+    resultMsg.classList.add('animate__animated', 'animate__lightSpeedInLeft')
+    resultMsg.innerHTML = `Player ${player} is the winner &#9786;`
+    playersTurnMsg.style.display = "none"
+    playAgainBtn.style.visibility = "visible"
+    playAgainBtn.classList.add('animate__animated', 'animate__heartBeat', 'animate__delay-1s', 'animate__infinite')
+    if (player === "X") { 
+        background.classList.add("backgroundx")
+        weatherDescription.innerText = "Sun's out!"
+    } else if (player === "O") {
+        background.classList.add("backgroundo")
+        weatherDescription.innerText = "Here comes the rain..."
+    }
 }
 
 function draw () {
-    resultMsg.style.display = "block"
-    resultMsg.innerHTML = "It's a draw!"
-    playAgainBtn.style.display = "block"
-    playersTurnMsg.style.visibility = "hidden"
+    finishSound.play()
+    resultMsg.classList.add('animate__animated', 'animate__lightSpeedInLeft')
+    resultMsg.innerHTML = "It's a draw &#9786"
+    weatherDescription.innerText = "It's cloudy with a chance of meatballs"
+    playersTurnMsg.style.display = "none"
+    playAgainBtn.style.visibility = "visible"
+    playAgainBtn.classList.add('animate__animated', 'animate__heartBeat', 'animate__delay-1s', 'animate__infinite')
 }
 
 function handlePlayAgain () {
+    clickSound.play()
     for (let square of squares) {
         square.classList.remove("X")
         square.classList.remove("O")
@@ -92,9 +112,14 @@ function handlePlayAgain () {
         square.innerText = ""
     }
     playersTurnLetter.innerText = "X"
-    playAgainBtn.style.display = "none"
-    resultMsg.style.display = "none" 
-    playersTurnMsg.style.visibility = "visible"
+    playAgainBtn.style.visibility = "hidden"
+    playAgainBtn.classList.remove('animate__animated', 'animate__heartBeat', 'animate__infinite')
+    resultMsg.innerText = ""
+    resultMsg.classList.remove('animate__animated', 'animate__lightSpeedInLeft')
+    playersTurnMsg.style.display = "block"
+    weatherDescription.innerText = ""
+    background.classList.remove("backgroundo")
+    background.classList.remove("backgroundx")
     turns = 0
     hasWon = false
     player = "playerX"
