@@ -5,7 +5,7 @@ Classic Tic-Tac-Toe with a bit of a story and a tiny twist.
 Tic-Tac-Toe is a simple, two player game and the goal is to be the first player to get three in a row on a 3-by-3 grid. 
 <br>
 <br>
-My version is weather themed. Being based in Melbourne, the city known to have four seasons in one day and that was my inspiration for this game. Depending on who wins, you'll either get to enjoy the great outdoors in the blazing sun or tuck yourself warmly in bed and fall asleep listening to the heavy downpour. Or...if nobody wins, it'll be another cloudy day. 
+My version is weather themed. Being based in Melbourne was my inspiration for the theme of this game as it is the city known for having four seasons in one day. Depending on who wins, you'll either get to enjoy the great outdoors in the blazing sun or tuck yourself warmly in bed and fall asleep listening to the heavy downpour. Or...if nobody wins, it'll be another cloudy day. 
 <br>
 <br>
 
