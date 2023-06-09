@@ -34,10 +34,10 @@ playAgainBtn.addEventListener("click", handlePlayAgain)
 
 
 function handleChoice (event) {
+    let selectedSquare = event.target
+
     turns++ 
     clickSound.play()
-
-    let selectedSquare = event.target
 
     if (turns % 2 === 1) {
         player = playerX
@@ -111,12 +111,12 @@ function handlePlayAgain () {
         square.style.pointerEvents = "auto"
         square.innerText = ""
     }
+    playersTurnMsg.style.display = "block"
     playersTurnLetter.innerText = "X"
     playAgainBtn.style.visibility = "hidden"
     playAgainBtn.classList.remove('animate__animated', 'animate__heartBeat', 'animate__infinite')
     resultMsg.innerText = ""
     resultMsg.classList.remove('animate__animated', 'animate__lightSpeedInLeft')
-    playersTurnMsg.style.display = "block"
     weatherDescription.innerText = ""
     background.classList.remove("backgroundo")
     background.classList.remove("backgroundx")

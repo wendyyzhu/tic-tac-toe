@@ -19,7 +19,7 @@ This is a two player game, pick which player you want to be:
 
 The game is configured so that Player X starts and the game will let you know when it is Player O's turn. 
 ![Screenshot of the nought and cross](images/Start.png)
-Each player takes turns picking a block until one player gets three in a row. If Player X wins, as promised, the sun comes out... 
+Each player takes turns picking a block until one player gets three blocks in a row. If Player X wins, as promised, the sun comes out... 
 ![Screenshot of what happens when Player X wins](images/Sun.png)
 If Player O wins, here comes the rain...
 ![Screenshot of what happens when Player O wins](images/Rain.png)
@@ -29,20 +29,3 @@ Once the game has finished, there will be the option to play again and the game 
 - HTML 
 - CSS
 - JavaScript
-
-<!-- README Suggestions:
-List technologies used
-Link to wireframes and user stories.
-Add screenshots of your project.
-Document your planning and tell a story about your development process and problem-solving strategy.
-List unsolved problems which would be fixed in future iterations.
-Describe how some of your favorite functions work
-A demo of your game: Show us the functionality!
-Some questions might help you with the presentation:
-What is the game about?
-Is there any information you think might help us understand what you built?
-What features did you include?
-Make sure to explain anything "new" (things that we didn't cover in class)
-What was the most difficult part of the project?
-What was your favourite part to work on?
-What would you like to add next? -->
